@@ -10,9 +10,23 @@
     <p>Please enter your name and provide your feedback:</p>
     <form action="{{ url_for('start_feedback') }}" method="post">
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="feedback">Feedback:</label>
-        <textarea id="feedback" name="feedback" rows="4" required></textarea>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="requirements_met">Were all your requirements met?</label><br>
+        <input type="radio" id="requirements_met_yes" name="requirements_met" value="Yes" required>
+        <label for="requirements_met_yes">Yes</label>
+        <input type="radio" id="requirements_met_no" name="requirements_met" value="No">
+        <label for="requirements_met_no">No</label><br><br>
+        <label for="no_defect">Did you receive your product without any defect?</label><br>
+        <input type="radio" id="no_defect_yes" name="no_defect" value="Yes" required>
+        <label for="no_defect_yes">Yes</label>
+        <input type="radio" id="no_defect_no" name="no_defect" value="No">
+        <label for="no_defect_no">No</label><br><br>
+        <label for="satisfaction">On a scale of 1-10, how satisfied are you with our service?</label><br>
+        <input type="number" id="satisfaction" name="satisfaction" min="1" max="10" required><br><br>
+        <label for="improvements">What improvements would you like to see?</label><br>
+        <textarea id="improvements" name="improvements" rows="4" required></textarea><br><br>
+        <label for="comments">Any additional comments:</label><br>
+        <textarea id="comments" name="comments" rows="4"></textarea><br><br>
         <button type="submit">Submit Feedback</button>
     </form>
 </body>
