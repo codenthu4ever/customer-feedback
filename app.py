@@ -12,8 +12,20 @@ def index():
 @app.route('/start_feedback', methods=['POST'])
 def start_feedback():
     name = request.form['name']
-    feedback_text = request.form['feedback']
-    feedback[name] = feedback_text
+    requirements_met = request.form['requirements_met']
+    no_defect = request.form['no_defect']
+    satisfaction = request.form['satisfaction']
+    improvements = request.form['improvements']
+    comments = request.form.get('comments', '')  # Use get() to handle optional field
+    
+    feedback[name] = {
+        'requirements_met': requirements_met,
+        'no_defect': no_defect,
+        'satisfaction': satisfaction,
+        'improvements': improvements,
+        'comments': comments
+    }
+    
     return redirect(url_for('results'))
 
 @app.route('/results')
