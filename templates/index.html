@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback App</title>
+</head>
+<body>
+    <h1>Welcome to the Feedback App</h1>
+    <p>Please enter your name and provide your feedback:</p>
+    <form action="{{ url_for('start_feedback') }}" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="feedback">Feedback:</label>
+        <textarea id="feedback" name="feedback" rows="4" required></textarea>
+        <button type="submit">Submit Feedback</button>
+    </form>
+</body>
+</html>
